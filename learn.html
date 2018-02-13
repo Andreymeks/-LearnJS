@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+    <html>
+      <head></head>
+      <body>
+        <h1 id="nameArticle">Название статьи</h1>
+        <input type="button" onclick="countRabbits()" value="Изменить цвет заголовка на синий!"/> <br><br>
+        <ul id="list">  <!--class--> 
+          <li id="nameLi">1 пункт</li>
+          
+          <li id="nameLi2">2 пункт</li>
+          <li id="my">А вот ут был Вася! БЫЛ!</li>
+          
+        </ul>
+        <script>
+        
+         //Получить элемент (узел), имеющий id="nameArticle"
+         function countRabbits(){
+          var nameArticle = document.getElementById("nameArticle");
+          //изменить цвет текста элемента
+          nameArticle.style.color = "blue";
+         };
+         
+         function countLi(){
+          var nameLi = document.getElementById("nameLi");
+          //изменить цвет текста элемента
+          nameLi.style.color = "red";
+         }
+           function countLi2(){
+          var nameLi2 = document.getElementById("nameLi2");
+          //изменить цвет текста элемента
+          nameLi2.style.color = "green";
+         }
+         function countRabbits1(){
+         var elem = document.getElementById('my');
+         elem.innerHTML = 'Васи тут не было! Тут был Андрей)! <br> Учим ЯваСкрипт!';
+         }
+         /*var Cheing = document.body.innerHTML ); // читаем текущее содержимое
+    document.body.innerHTML = 'Новый BODY!'; // заменяем содержимое*/
+         
+         function star(){
+        //создаём элемент (узел) li
+    var elementLI = document.createElement("li");
+    //создаём текстовый узел, содержащий текст "НОВАЯ СТРОКА СКАЗКА ПРО Cмapтфoн"
+    var textSmart= document.createTextNode("НОВАЯ СТРОКА СКАЗКА ПРО Cмapтфoн");
+    //добавляем созданный текстовый узел как последний дочерний элемент к только что созданному элементу LI
+    elementLI.appendChild(textSmart);
+    //получаем элемент, к которому будет добавлен созданный узел li как дочерний
+    var elementUL = document.getElementById("list");
+    //добавляем созданный элемент li как последний дочерний элемент к UL с id="list"
+    elementUL.appendChild(elementLI);
+    }
+        </script>
+        
+        <input type="button" onclick="countLi()" value="Изменить цвет на красный!"/><br>
+        <input type="button" onclick="countLi2()" value="Изменить цвет на зеленый!"/><br>
+        <input type="button" onclick="countRabbits1()" value="Заменить Васю! Да, взять и заменить!"/><br>
+      <input type="button" onclick="star()" value="НОВАЯ СТРОКА СКАЗКА ПРО Cмapтфoн!"/><br>
+      </body>
+    </html>
